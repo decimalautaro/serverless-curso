@@ -1,6 +1,6 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
+import { findAll, findById } from '@functions/index';
 
 const serverlessConfiguration: AWS = {
   service: 'serverless-curso',
@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { findAll, findById },
   package: { individually: true },
   custom: {
     esbuild: {
